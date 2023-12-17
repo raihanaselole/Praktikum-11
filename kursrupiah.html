@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Kurs Rupiah</title>
+</head>
+<body>
+
+    <h2>Menghitung Kurs Rupiah</h2>
+    <hr>
+    <label for="dolar">Nilai dolar : </label>
+    <input type="number" id="dolar">
+    <button onclick="Kursdolar()">konversi</button>
+
+    <p>Hasil Rupiah : <span id="hasilkurs"></span></p>
+
+    <script>
+        function Kursdolar() {
+
+            // dolar ke rupiah
+            let dolar = document.getElementById("dolar").value;
+            const Kurs = 14650;
+
+            let hasilkurs = Kurs * dolar;
+
+            console.log("Hasil Ke Rupiah = " + hasilkurs);
+            let hasilkurs2 = document.getElementById("hasilkurs");
+            hasilkurs2.innerHTML = hasilkurs;
+
+        } 
+    </script>
+</body>
+</html>

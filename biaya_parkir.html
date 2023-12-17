@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biaya Parkir</title>
+</head>
+<body>
+    <h2>Menghitung Biaya Parkir</h2>
+    <hr>
+    <label for="jamin">Masukkan Jam Masuk : </label>
+    <input type="number" id="jamin">
+    <br>
+    <label  for="jamout">Masukkan Jam Keluar : </label>
+    <input type="number" id="jamout" style="margin-top: 10px;">
+
+    <p>Total Durasi Parkir : 
+        <span id="lama">0</span> Jam
+    </p>
+
+    <button onclick="hitungparkir()">Hitung</button>
+    <p style="border: 1px solid; padding: 5px; margin-right: 940px;">
+        Total yang harus di bayar : 
+        <span id="hasil">0</span>
+    </p>
+
+    <script>
+        function hitungparkir() {
+            let jamin = document.getElementById("jamin").value;
+            let jamout = document.getElementById("jamout").value;
+
+            let lama = jamout - jamin;
+            let _lama = document.getElementById("lama");
+            _lama.innerHTML = lama;
+            const hargaawal = 3000;
+            const perjam = 1000;
+            let biaya = 0;
+
+            if(lama <=2 ){
+                biaya = hargaawal
+
+            } else{
+                let jam_tambahan = lama - 2;
+                biaya = hargaawal + ( jam_tambahan * perjam);
+            }
+            let _hasil = document.getElementById("hasil");
+            _hasil.innerHTML = biaya;
+}
+
+    </script>
+</body>
+</html>
